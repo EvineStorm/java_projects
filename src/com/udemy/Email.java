@@ -1,5 +1,6 @@
 package com.udemy;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Email {
@@ -8,8 +9,10 @@ public class Email {
     private String password;
     private int defaultPasswordLength = 10;
     private String department;
-    private int mailboxCapacity;
+    private String email;
+    private int mailboxCapacity = 500 ;
     private String alternateEmail;
+    private String companySuffix = "ourcompany.com";
 
     public Email(String firstName, String lastName) {
         this.firstName = firstName;
@@ -21,6 +24,9 @@ public class Email {
 
         this.password = generatePassword(defaultPasswordLength);
         System.out.println("Your password is: " + this.password);
+
+        this.email = firstName.toLowerCase() + "." +  lastName.toLowerCase() + "@" + department + "." + companySuffix;
+        System.out.println("Your email is: " + email);
     }
 
     private String setDepartment() {
@@ -41,5 +47,25 @@ public class Email {
             password[i] = passwordSet.charAt(rand);
         }
         return new String(password);
+    }
+
+    public void setMailboxCapacity(int capacity) {
+        this.mailboxCapacity = capacity;
+    }
+
+    public void setAlternateEmail(String altEmail) {
+        this.alternateEmail = altEmail;
+    }
+
+    public void changePassword(String password) {
+        this.password = password;
+    }
+
+    public int getMailboxCapacity() {
+        return mailboxCapacity;
+    }
+
+    public String getAlternateEmail() {
+        return alternateEmail;
     }
 }
