@@ -17,16 +17,10 @@ public class Email {
     public Email(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("New email created: " + this.firstName + " " + this.lastName);
-
         this.department = setDepartment();
-        System.out.println("Chosen department: " + this.department);
-
         this.password = generatePassword(defaultPasswordLength);
         System.out.println("Your password is: " + this.password);
-
         this.email = firstName.toLowerCase() + "." +  lastName.toLowerCase() + "@" + department + "." + companySuffix;
-        System.out.println("Your email is: " + email);
     }
 
     private String setDepartment() {
@@ -67,5 +61,11 @@ public class Email {
 
     public String getAlternateEmail() {
         return alternateEmail;
+    }
+
+    public String showInfo() {
+        return "DISPLAY NAME: " + firstName + " " + lastName +
+                "\nCOMPANY EMAIL: " + email +
+                "\nMAILBOX CAPACITY : " + mailboxCapacity + "mb";
     }
 }
