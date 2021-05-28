@@ -1,4 +1,4 @@
-package com.udemy;
+package com.udemy.emailapp;
 
 public class EmailApp {
 

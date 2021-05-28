@@ -1,4 +1,4 @@
-package com.udemy;
+package com.udemy.emailapp;
 
 import java.util.Locale;
 import java.util.Scanner;
