@@ -29,8 +29,6 @@ public class Student {
             this.gradeYear = in.nextInt();
 
             setStudentID();
-
-            System.out.println(firstName +" "+lastName + " " + gradeYear + " " + studentID);
         }
 
         private void setStudentID() {
@@ -52,7 +50,6 @@ public class Student {
 
             } while (1 != 0);
             System.out.println("Enrolled in: " + courses);
-            System.out.println("Tuition balance: " + tuitionBalance);
         }
 
         public void viewBalance() {
@@ -67,5 +64,13 @@ public class Student {
             tuitionBalance = tuitionBalance - payment;
             System.out.println("Thank you for your payment of: $" + payment);
             viewBalance();
+        }
+
+        public String showInfo() {
+            return "Name: " + firstName + " " + lastName +
+                   "\nYear: "+ gradeYear +
+                   "\nStudent ID: "+ studentID +
+                   "\nCourses enrolled: "+ courses +
+                   "\nBalance: $" + tuitionBalance;
         }
 }
