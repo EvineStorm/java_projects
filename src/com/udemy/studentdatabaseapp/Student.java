@@ -66,11 +66,11 @@ public class Student {
             viewBalance();
         }
 
-        public String showInfo() {
-            return "Name: " + firstName + " " + lastName +
+        public void showInfo() {
+            System.out.println("Name: " + firstName + " " + lastName +
                    "\nYear: "+ gradeYear +
                    "\nStudent ID: "+ studentID +
                    "\nCourses enrolled: "+ courses +
-                   "\nBalance: $" + tuitionBalance;
+                   "\nBalance: $" + tuitionBalance);
         }
 }
